@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Preline_Navbar from "./preline/Preline_Navbar";
+import PrelineScript from "./preline/PrelineScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* navbar */}
+        <Preline_Navbar />
+
+        {/* body */}
+        {children}
+
+        {/* preline script */}
+        <PrelineScript />
+      </body>
     </html>
   );
 }
